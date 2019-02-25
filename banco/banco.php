@@ -45,6 +45,36 @@ function somatotalDIRETORIA($conexao){
     
 }
 
+function somatotalSR($conexao){
+    
+    $somatotalSR = array();
+    
+    $resultado = mysqli_query($conexao, "SELECT `co_sr`, SUM(`vl_bruto`) as vl_bruto, SUM(`vl_liquido`) as vl_liquido FROM base_lci GROUP BY co_sr;" );
+    
+    while($produto = mysqli_fetch_assoc($resultado)){
+    array_push($somatotalSR, $produto);
+}
+
+    return $somatotalSR;
+    
+    
+}
+
+function somatotalAGENCIA($conexao){
+    
+    $somatotalAGENCIA = array();
+    
+    $resultado = mysqli_query($conexao, "SELECT `co_unidade`, SUM(`vl_bruto`) as vl_bruto, SUM(`vl_liquido`) as vl_liquido FROM base_lci GROUP BY co_unidade;" );
+    
+    while($produto = mysqli_fetch_assoc($resultado)){
+    array_push($somatotalAGENCIA, $produto);
+}
+
+    return $somatotalAGENCIA;
+    
+    
+}
+
 function listarTodas($conexao){
     
     $totalTodas = array();

@@ -20,10 +20,13 @@
     $totalDIRETORIA = totalDIRETORIA($conexao);
     $totalTodas = listarTodas($conexao);
     $somaTotalDDIRETORIA = somaTotalDiretoria($conexao);
+    $somaTotalSR = somaTotalSR($conexao);
+    $somaTotalAGENCIA = somaTotalAGENCIA($conexao);
 ?>
 
     <body>
         <h5 class="center" >Painel Gecav - LCI</h5>
+        <p class="center" >Versão 1.2.3</p>
 
         <div class="row">
             <div class="col s12">
@@ -61,6 +64,7 @@
 
 
             <div id="test2" class="col s12">
+                    <br>
                 <div class="input-field col s5"></div>
                 <div class="input-field col s2">
                     <select>
@@ -76,7 +80,7 @@
                                     <table class="table table-condensed">
         <thead>
           <tr>
-              <th>DiretoriaR</th>
+              <th>Diretoria</th>
               <th>Valor Bruto - R$</th>
               <th>Valor Líquido - R$</th>
           </tr>
@@ -98,10 +102,67 @@
 
 
             <div id="test3" class="col s12">
-                <hr> <h5>SR</h5>
+                <hr>
+
+
+
+
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>SR</th>
+                        <th>Valor Bruto - R$</th>
+                        <th>Valor Líquido - R$</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        <?foreach($somaTotalSR as $totalSR):?>
+                            <tr>    
+                                <td><?=$totalSR['co_sr']?></td>
+                                <td><?=number_format($totalSR['vl_bruto'],2,",",".")?></td>
+                                <td><?=number_format($totalSR['vl_liquido'],2,",",".")?></td>
+                            </tr>
+                        <?endforeach?>
+                    </tbody>
+                </table>
+
+
+
             </div>
             <div id="test4" class="col s12">
                 <hr>
+
+
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Agência</th>
+                        <th>Valor Bruto - R$</th>
+                        <th>Valor Líquido - R$</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        <?foreach($somaTotalAGENCIA as $totalAGENCIA):?>
+                            <tr>    
+                                <td><?=$totalAGENCIA['co_unidade']?></td>
+                                <td><?=number_format($totalAGENCIA['vl_bruto'],2,",",".")?></td>
+                                <td><?=number_format($totalAGENCIA['vl_liquido'],2,",",".")?></td>
+                            </tr>
+                        <?endforeach?>
+                    </tbody>
+                </table>
+
+
+
+
+
+
+
+
+
+
             </div>
             <div id="test5" class="col s12">
             <hr>
