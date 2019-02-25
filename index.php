@@ -26,7 +26,7 @@
 
     <body>
         <h5 class="center" >Painel Gecav - LCI</h5>
-        <p class="center" >Versão 1.2.3</p>
+        <p class="center" >Versão 1.3.3</p>
 
         <div class="row">
             <div class="col s12">
@@ -57,14 +57,32 @@
                 <hr>
                 <br>
                 <br>
-                <?foreach($produtos as $produto){?>
-                    <h5 class="center" >Total da Carteira - R$ &nbsp; <?= number_format($produto['totalCaixa'],2,",",".")?></h5>
-                <?}?>
+
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Instituição</th>
+                        <th>Valor Bruto - R$</th>
+                        <th>Valor Líquido - R$</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        <?foreach($produtos as $totalCAIXAT):?>
+                            <tr>    
+                                <td>CAIXA</td>
+                                <td><?=number_format($totalCAIXAT['totalCaixaBruto'],2,",",".")?></td>
+                                <td><?=number_format($totalCAIXAT['totalCaixaLiquido'],2,",",".")?></td>
+                            </tr>
+                        <?endforeach?>
+                    </tbody>
+                </table>
+
             </div>
 
 
             <div id="test2" class="col s12">
-                    <br>
+                    <br/>
                 <div class="input-field col s5"></div>
                 <div class="input-field col s2">
                     <select>

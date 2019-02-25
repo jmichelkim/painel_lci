@@ -4,7 +4,7 @@ function totalCAIXA($conexao){
     
     $produtos = array();
     
-    $resultado = mysqli_query($conexao, "SELECT SUM(`vl_bruto`) as totalCaixa FROM base_lci;" );
+    $resultado = mysqli_query($conexao, "SELECT SUM(`vl_bruto`) as totalCaixaBruto, SUM(`vl_liquido`) as totalCaixaLiquido FROM base_lci;" );
     
     while($produto = mysqli_fetch_assoc($resultado)){
     array_push($produtos, $produto);
