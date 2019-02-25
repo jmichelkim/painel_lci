@@ -26,7 +26,7 @@
 
     <body>
         <h5 class="center" >Painel Gecav - LCI</h5>
-        <p class="center" >Versão 1.3.3</p>
+        <p class="center" >Versão 1.3.5 - também disponível <a href="http://173.237.137.60/~mundoart/gecav-painel-lci/">internet.</a></p>
 
         <div class="row">
             <div class="col s12">
@@ -55,9 +55,6 @@
             
             <div id="test1" class="col s12">
                 <hr>
-                <br>
-                <br>
-
                 <table class="table table-condensed">
                     <thead>
                     <tr>
@@ -82,17 +79,6 @@
 
 
             <div id="test2" class="col s12">
-                    <br/>
-                <div class="input-field col s5"></div>
-                <div class="input-field col s2">
-                    <select>
-                        <option value="">Selecione a Diretoria</option>
-                            <?foreach($totalDIRETORIA as $diretoria){?>
-                        <option value="<?$diretoria['diretoria']?>"><? echo $diretoria['diretoria']?></option>
-                        <?}?>
-                    </select>
-                </div>
-                <div class="input-field col s5"></div>
                 <hr>
 
                                     <table class="table table-condensed">
@@ -114,6 +100,7 @@
             <?endforeach?>
         </tbody>
       </table>
+
 
                     
             </div>
@@ -188,7 +175,7 @@
                 <table class="table table-condensed">
         <thead>
           <tr>
-              <th>DiretoriaR</th>
+              <th>Diretoria</th>
               <th>SR</th>
               <th>Unidade</th>
               <th>CPF</th>
@@ -215,10 +202,6 @@
         </tbody>
       </table>
             
-
-
-
-
             </div>
 
 
